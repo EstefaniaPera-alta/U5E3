@@ -1,0 +1,48 @@
+package burbuja;
+
+/**
+ *
+ * @author FANNY
+ */
+public class Nodo {
+    int arreglo[][] = {{9, 1, 4, 3, 7, 5},{10, 2, 5, 4, 8, 6}};
+public void Burbuja()
+{
+    for (int a=0; a < arreglo.length;a++)
+    for(int i = 0; i < 10 ; i++)
+        {
+            for(int j = 0; j < 5 ; j++)
+            {
+                if(arreglo[a][j] > arreglo[a][j+1])
+                {
+                    int auxiliar = arreglo[a][j+1];
+                    arreglo[a][j+1] = arreglo[a][j];
+                    arreglo[a][j] = auxiliar;
+                } 
+            }
+           
+        }
+}
+public void Mostrar()
+{
+    for (int i=0; i < arreglo.length ;i++)
+        {
+            for(int j=0; j < 6 ; j++)
+            {
+                System.out.print(arreglo[i][j]+" ");
+            }
+            System.out.println("");
+        }
+}
+  
+    public static void main(String[] args) {
+        Nodo obj = new Nodo();
+        System.out.println("Arreglo desordeado");
+        obj.Mostrar();
+        obj.Burbuja();
+        System.out.println(" ");
+        System.out.println("-----------------------------------");
+        System.out.println("Arreglo Ordenado");
+        obj.Mostrar();
+    }
+}
